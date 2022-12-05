@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/memory-card-game/static/css/main.f726f29a.css",
+    "main.js": "/memory-card-game/static/js/main.2f49e1a3.js",
+    "static/media/Hahmlet-SemiBold.ttf": "/memory-card-game/static/media/Hahmlet-SemiBold.22d2647186711ff620c9.ttf",
+    "static/media/Hahmlet-Regular.ttf": "/memory-card-game/static/media/Hahmlet-Regular.9a2a302bc2ef64d01f70.ttf",
+    "static/media/Hahmlet-Black.ttf": "/memory-card-game/static/media/Hahmlet-Black.e697f7827994d0e36ce0.ttf",
+    "static/media/Recoleta-Regular.otf": "/memory-card-game/static/media/Recoleta-Regular.fd9bfd35d1085b5c6511.otf",
+    "static/media/peep-sitting-4.png": "/memory-card-game/static/media/peep-sitting-4.db66f7ce52ac45cca233.png",
+    "static/media/peep-standing-10.png": "/memory-card-game/static/media/peep-standing-10.ff95cfbb98d585628511.png",
+    "static/media/peep-standing-16.png": "/memory-card-game/static/media/peep-standing-16.6f88850fbdcfacf08115.png",
+    "static/media/peep-17.png": "/memory-card-game/static/media/peep-17.9dececbaf85bd6d0be1b.png",
+    "static/media/peep-20.png": "/memory-card-game/static/media/peep-20.94af8fb96f834a9b9f95.png",
+    "static/media/peep-4.png": "/memory-card-game/static/media/peep-4.b6621e1776cf9812648e.png",
+    "static/media/peep-3.png": "/memory-card-game/static/media/peep-3.39e16f62db567f246588.png",
+    "static/media/peep-14.png": "/memory-card-game/static/media/peep-14.dbe069db6ec93268f58c.png",
+    "static/media/peep-18.png": "/memory-card-game/static/media/peep-18.906114d230d2bc54684b.png",
+    "static/media/peep-7.png": "/memory-card-game/static/media/peep-7.b12c18be6b592cb08d20.png",
+    "static/media/peep-15.png": "/memory-card-game/static/media/peep-15.9068225caa642edc5b70.png",
+    "static/media/peep-2.png": "/memory-card-game/static/media/peep-2.4626dd96cebcc51a6d53.png",
+    "static/media/peep-10.png": "/memory-card-game/static/media/peep-10.58267d1d8e653c16e955.png",
+    "static/media/peep-8.png": "/memory-card-game/static/media/peep-8.f2ddfd41b5fa72d30ea0.png",
+    "static/media/peep-9.png": "/memory-card-game/static/media/peep-9.79adb4891af75cf2f0b6.png",
+    "static/media/peep-1.png": "/memory-card-game/static/media/peep-1.c5fd2f0b8ed92c123514.png",
+    "static/media/peep-12.png": "/memory-card-game/static/media/peep-12.b1afde5912586b492d0e.png",
+    "static/media/peep-13.png": "/memory-card-game/static/media/peep-13.54be3447833087eed936.png",
+    "static/media/peep-5.png": "/memory-card-game/static/media/peep-5.016544bcab1e0109d3c9.png",
+    "static/media/peep-11.png": "/memory-card-game/static/media/peep-11.a77f82cc5a6a0e346d89.png",
+    "static/media/peep-16.png": "/memory-card-game/static/media/peep-16.dd32bad75fadeb306324.png",
+    "static/media/peep-6.png": "/memory-card-game/static/media/peep-6.a49682bda3c2c9a04134.png",
+    "static/media/peep-19.png": "/memory-card-game/static/media/peep-19.8a47a9e9feaac32e780b.png",
+    "index.html": "/memory-card-game/index.html",
+    "main.f726f29a.css.map": "/memory-card-game/static/css/main.f726f29a.css.map",
+    "main.2f49e1a3.js.map": "/memory-card-game/static/js/main.2f49e1a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f726f29a.css",
+    "static/js/main.2f49e1a3.js"
+  ]
+}
