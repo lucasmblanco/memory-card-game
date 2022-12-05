@@ -2,7 +2,7 @@ import Panel from "./components/panel";
 import ScoreDisplay from "./components/points";
 import Celebration from "./components/celebration"; 
 import End from "./components/end"
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import { cardData } from "./components/cardsData";
 
 function App() {
@@ -36,6 +36,8 @@ function App() {
     }
      
 }
+
+
 
   return(
       <div className="app">
