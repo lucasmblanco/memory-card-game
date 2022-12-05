@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/memory-card-game/static/css/main.f726f29a.css",
+    "main.css": "/memory-card-game/static/css/main.f4cd3643.css",
     "main.js": "/memory-card-game/static/js/main.00819dcf.js",
     "static/media/Hahmlet-SemiBold.ttf": "/memory-card-game/static/media/Hahmlet-SemiBold.22d2647186711ff620c9.ttf",
     "static/media/Hahmlet-Regular.ttf": "/memory-card-game/static/media/Hahmlet-Regular.9a2a302bc2ef64d01f70.ttf",
@@ -30,11 +30,11 @@
     "static/media/peep-6.png": "/memory-card-game/static/media/peep-6.a49682bda3c2c9a04134.png",
     "static/media/peep-19.png": "/memory-card-game/static/media/peep-19.8a47a9e9feaac32e780b.png",
     "index.html": "/memory-card-game/index.html",
-    "main.f726f29a.css.map": "/memory-card-game/static/css/main.f726f29a.css.map",
+    "main.f4cd3643.css.map": "/memory-card-game/static/css/main.f4cd3643.css.map",
     "main.00819dcf.js.map": "/memory-card-game/static/js/main.00819dcf.js.map"
   },
   "entrypoints": [
-    "static/css/main.f726f29a.css",
+    "static/css/main.f4cd3643.css",
     "static/js/main.00819dcf.js"
   ]
 }
