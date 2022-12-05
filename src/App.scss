@@ -34,8 +34,15 @@
     src: url("./assets/fonts/Recoleta-Regular.otf");
 }
 
+
+*::selection {
+    background: rgb(248, 183, 232);
+}
+
 html, body{
     overflow-x: hidden;
+
+    
 
     div.app {
         display: flex;
@@ -47,6 +54,7 @@ html, body{
         min-height: strech;
         box-sizing: border-box;
         overflow-x: hidden;
+        
         
         h1{
             justify-self: start;
