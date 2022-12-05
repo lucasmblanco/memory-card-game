@@ -43,12 +43,12 @@ function App() {
         <h2>MEMORY CARD GAME</h2>
         <ScoreDisplay status={points}/> 
         <div className="panel-container">
-          <Panel cardData={cards} handleChange={handleChange}/>
+          <Panel cardData={cards} handleChange={handleChange} />
         </div>
         
 
       {
-        points === 20 ? <Celebration resetGame={resetGame}/> : null
+        points === 1 ? <Celebration resetGame={resetGame}/> : null
       }
       <End />
     </div>

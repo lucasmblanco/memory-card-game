@@ -51,7 +51,7 @@ html, body{
         min-height: 100vh; 
         min-height: -moz-available;
         min-height: -webkit-fill-available;
-        min-height: strech;
+        min-height: fill-available;
         box-sizing: border-box;
         overflow-x: hidden;
         
@@ -248,14 +248,24 @@ html, body{
             min-height: 100vh; 
             min-height: -moz-available;
             min-height: -webkit-fill-available;
-            min-height: stretch;
+            min-height: fill-available;
+            @include animate(appear, 0.4s, ease, 0s, 1, normal, forwards); 
+            @include keyframes(appear){
+                0% {
+                    opacity: 0.5;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
            
 
             div.celebration{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                
                 background-image: linear-gradient(to right,rgb(248, 183, 232),rgb(179, 70, 243));
                 margin: 0 auto; 
                 height: 20rem;
@@ -270,6 +280,18 @@ html, body{
                     width: 20rem;
                 }
 
+                @include animate(appearBackground, 1s, ease, 0s, 1, normal, forwards); 
+                    @include keyframes(appearBackground){
+                        0% {
+                            opacity: 0;
+                        }
+
+                      
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                    
                div.celebration-message{
                     display: flex;
                     flex-direction: column;
@@ -283,6 +305,21 @@ html, body{
 
                     @include media(){
                         text-align: center;
+                    }
+
+                    @include animate(appearText, 1s, ease, 0s, 1, normal, forwards); 
+                    @include keyframes(appearText){
+                        0% {
+                            opacity: 0;
+                        }
+
+                        50%{
+                            opacity: 0.5;
+                        }
+        
+                        100% {
+                            opacity: 1;
+                        }
                     }
                     }
 
@@ -299,6 +336,18 @@ html, body{
                         &:hover{
                             box-shadow:  0 0 20px 5px rgba(0, 0, 0, 0.2);
                         }
+
+                        @include animate(appearButton, 5s, ease, 0s, 1, normal, forwards); 
+                        @include keyframes(appearButton){
+                        0% {
+                            opacity: 0;
+                        }
+                        
+
+                        100% {
+                            opacity: 1;
+                        }
+                    }
                     }
                }
 
@@ -314,6 +363,18 @@ html, body{
                         padding: 10px 0;
                         width: 100%;
                     }
+
+                    @include animate(appearImage, 1s, ease, 0s, 1, normal, forwards); 
+                    @include keyframes(appearImage){
+                        0% {
+                            opacity: 0;
+                        }
+        
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                    
 
                     div.image-1{
                         
