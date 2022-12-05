@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import Panel from "./components/panel";
+import ScoreDisplay from "./components/points";
+import Celebration from "./components/celebration"; 
+import End from "./components/end"
+import { useState} from "react";
+import { cardData } from "./components/cardsData";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const [ points, setPoints ] = useState(0); 
+  const [ cards, setCards] = useState(cardData);
+
+  const changePoints = () => setPoints( prevPoints => prevPoints + 1);
+  
+  const checkCard = (id) => {
+    setCards(cards.map((card) => card.id === id ? {...card, checked: true} : card))
+  }
+
+  const resetCards = () => {
+    setCards(cards.map(card => ({ ...card, checked: false})))
+  }
+
+
+  const handleChange = (data) => {
+    if(data.checked) {
+      setPoints(0); 
+      resetCards(); 
+    } else {
+      changePoints(); 
+      checkCard(data.id);
+    }
+     
+}
+
+  return(
+      <div className="app">
+        <h1>FIND THE PEEPS</h1>
+        <h2>MEMORY CARD GAME</h2>
+        <ScoreDisplay status={points}/> 
+        <div className="panel-container">
+          <Panel cardData={cards} handleChange={handleChange}/>
+        </div>
+        
+
+      {
+        points === 20 ? <Celebration /> : null
+      }
+      <End />
     </div>
-  );
+  )
 }
 
 export default App;
+ 
