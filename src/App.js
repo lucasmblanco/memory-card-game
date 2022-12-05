@@ -45,10 +45,8 @@ function App() {
         <div className="panel-container">
           <Panel cardData={cards} handleChange={handleChange} />
         </div>
-        
-
       {
-        points === 1 ? <Celebration resetGame={resetGame}/> : null
+        points === 20 ? <Celebration resetGame={resetGame}/> : null
       }
       <End />
     </div>
