@@ -4,16 +4,14 @@ import  _  from "lodash"
 
 function Panel({cardData, handleChange}) { 
 
-    const shuffledAndSplice = () => _.shuffle(cardData).splice(0, 5)
+    const shuffledAndSplice = () => _.shuffle(cardData).splice(0, 5);
 
-  
+    const showCards = () => shuffledAndSplice().map(card => 
+        <Card data={card} key={card.id} handleChange={handleChange}/>)
+
+
     return(
-        <div className="panel">
-        {
-            shuffledAndSplice().map(card => 
-            <Card data={card} key={card.id} handleChange={handleChange}/>)
-        }
-        </div>
+        <div className="panel"> { showCards() } </div>
         )
     }
 

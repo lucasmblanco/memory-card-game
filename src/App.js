@@ -21,6 +21,11 @@ function App() {
   }
 
 
+  const resetGame = () => {
+    setPoints(0); 
+    resetCards();
+  }
+
   const handleChange = (data) => {
     if(data.checked) {
       setPoints(0); 
@@ -43,7 +48,7 @@ function App() {
         
 
       {
-        points === 20 ? <Celebration /> : null
+        points === 20 ? <Celebration resetGame={resetGame}/> : null
       }
       <End />
     </div>

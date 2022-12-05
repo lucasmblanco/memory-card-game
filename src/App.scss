@@ -8,6 +8,12 @@
     }
 }
 
+@mixin media( $size: 1300px){
+    @media screen and (max-width: $size){
+        @content
+    }
+}
+
 @font-face {
     font-family: "Hahmlet Black";
     src: url("./assets/fonts/Hahmlet-Black.ttf");
@@ -15,29 +21,45 @@
 
 @font-face {
     font-family: "Hahmlet Regular";
-    src: url("./assets//fonts/Hahmlet-Regular.ttf");
+    src: url("./assets/fonts/Hahmlet-Regular.ttf");
 }
 
 @font-face {
     font-family: "Hahmlet SemiBold";
-    src: url("./assets//fonts/Hahmlet-SemiBold.ttf");
+    src: url("./assets/fonts/Hahmlet-SemiBold.ttf");
 }
 
-html{
-    
+@font-face {
+    font-family: "Recoleta Regular";
+    src: url("./assets/fonts/Recoleta-Regular.otf");
+}
+
+html, body{
+    overflow-x: hidden;
 
     div.app {
         display: flex;
         flex-direction: column;
         align-items: center;
-      
-        height: 100vh;
+        min-height: 100vh; 
+        min-height: -moz-available;
+        min-height: -webkit-fill-available;
+        min-height: strech;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        
         h1{
             justify-self: start;
             font-family: "Hahmlet Black", Arial, Helvetica, sans-serif;
             font-size: 5.2rem;
             text-align: center;
-            padding: 8px;
+            padding: 8px 0;
+            width: fit-content;
+
+            @include media(){
+                font-size: 3rem;
+                padding: 10px 0;
+            }
         }
         
         h2{
@@ -48,7 +70,14 @@ html{
             color: rgb(233, 233, 159); 
             padding: 8px;
             border-radius: 10px;
-            width: 49rem;
+            width: 49.4rem;
+
+            @include media(){
+                font-size: 0.7rem;
+                width: 100%;
+                padding: 6px;
+            }
+          
         }
         
         div.score-container{
@@ -56,7 +85,7 @@ html{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 47.5rem;
+            width: 48rem;
             height: 5rem;
             margin: 10px;
             padding: 20px;
@@ -66,7 +95,14 @@ html{
             font-size: 3rem;
             font-family: "Hahmlet SemiBold", Arial, Helvetica, sans-serif;
             
-           
+           @include media(){
+                width: 20rem;
+                height: 3rem;
+                font-size: 1.5rem;
+                margin: 10px;
+                padding: 10px;
+                box-shadow: inset 0 0 0 8px black;
+           }
         }
     
         div.positive{
@@ -84,15 +120,27 @@ html{
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px;
-         
+            flex-grow: 1;
+            width: 80rem;
+            @include media(){
+                width: 25rem;
+                flex-grow: 2;
+            }
             div.panel{
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: 1fr;
                 gap: 10px; 
-                width: 80rem;
+                width: 100%;
                 height: 20rem;
-            
+                @include media(){
+                    grid-template-columns: repeat(2, 10rem);
+                    grid-template-rows: repeat(3, 12rem);
+                    justify-content: center;
+                    height: 100%;
+                    gap: 5px; 
+                }
+
                 div.card-container{
                     display: flex;
                     flex-direction: column;
@@ -101,12 +149,15 @@ html{
                     border-radius: 20px;
                     box-shadow: inset 0 0 0 13px black;
                     background-color: white;
-                   
+                    
+                    @include media(){
+                        border-radius: 10px;
+                        box-shadow: inset 0 0 0 8px black;
+                    }
         
                 &:hover{
-                    @include animate(myAnim, 2s, ease, 0s, 1, normal, forwards);
-        
-                    @include keyframes(myAnim) {
+                    @include animate(shake, 2s, ease, 0s, 1, normal, forwards);
+                    @include keyframes(shake) {
                         0%,
                         100% {
                             transform: translateX(0%);
@@ -137,9 +188,18 @@ html{
         
                 div.img-container{
                     padding: 20px;
+
+                    @include media(){
+                        padding: 10px; 
+                    }
                     img{
                         width: 150px;
                         height: 200px;
+
+                        @include media(){
+                            width: 80px;
+                            height: 120px;
+                        }
                     }
                 }
         
@@ -151,11 +211,17 @@ html{
                         width: 100%;
                         height: 100%;
                         font-size: 1rem;
-                        font-family: "Hahmlet Regular", Arial, Helvetica, sans-serif;
+                        font-family: "Recoleta Regular", Arial, Helvetica, sans-serif;
+                        letter-spacing: 1px;
                         border-bottom-left-radius: 20px;
                         border-bottom-right-radius: 20px;
                         color: rgb(248, 183, 232);
                         background-color: black;
+
+                        @include media(){
+                            font-size: 0.65rem;
+                            
+                        }
                     }
                 }
             }
@@ -164,40 +230,169 @@ html{
         
         
         div.celebration-container{
-            background:red;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:rgba(236, 147, 248, 0.397);
             position:absolute;
-            top:0px;
-            right:0px;
-            bottom:0px;
-            left:0px;
-        
+            min-width: 100vw;
+            min-height: 100vh; 
+            min-height: -moz-available;
+            min-height: -webkit-fill-available;
+            min-height: stretch;
+           
+
             div.celebration{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                background-image: linear-gradient(to right,rgb(248, 183, 232),rgb(179, 70, 243));
                 margin: 0 auto; 
-                height: 500px;
-                width: 500px;
+                height: 20rem;
+                width: 70rem;
+                border-radius: 8px;
+                font-family: "Recoleta Regular", Arial, Helvetica, sans-serif;
+                box-shadow:  0 0 20px 5px rgba(0, 0, 0, 0.2);
+
+                @include media(){
+                    flex-direction: column;
+                    height: 30rem;
+                    width: 20rem;
+                }
+
+               div.celebration-message{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+
+                    div.celebration-text{
+                    color: black;
+                    padding: 50px;
+                    font-size: 2rem;
+
+                    @include media(){
+                        text-align: center;
+                    }
+                    }
+
+
+                    button{
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        padding: 5px;
+                        border: none;
+                        background-color: black;
+                        color: white;
+                        font-family: 'Recoleta Regular', Arial, Helvetica, sans-serif;
+
+                        &:hover{
+                            box-shadow:  0 0 20px 5px rgba(0, 0, 0, 0.2);
+                        }
+                    }
+               }
+
+
+                div.celebration-images {
+                    display: flex;
+                    width: 30rem;
+                    align-items: flex-end;
+                    justify-content: center;
+                    gap: 5px;
+
+                    @include media(){
+                        padding: 10px 0;
+                        width: 100%;
+                    }
+
+                    div.image-1{
+                        
+                        height: 15rem;
+                        width: 6rem;
+
+                        @include media(){
+                            height: 10rem;
+                            width: 4rem;
+                        }
+    
+                        img{
+                            -webkit-transform: scaleX(-1);
+                            transform: scaleX(-1);
+                            width: 100%;
+                            height: 100%;
+                        }
+    
+                        
+                    }
+    
+                    div.image-2{
+                        height: 15rem;
+                        width: 7rem;
+
+                        @include media(){
+                            height: 10rem;
+                            width: 4.5rem;
+                        }
+    
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+    
+                    div.image-3{
+                        height: 10rem;
+                        width: 8rem;
+    
+                        @include media(){
+                            height: 7rem;
+                            width: 5rem;
+                        }
+                        img{
+                            
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                
             }
         }
     }
     
 
     footer{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        padding: 10px;
-        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 1;
+        padding: 2px;
+        align-self: flex-end;
         background-image: linear-gradient(to right,rgb(248, 183, 232),rgb(179, 70, 243));
         width: 100%;
+        height: 25px;
         color: white;
         text-align: center;
         font-family: "Hahmlet Regular", Arial, Helvetica, sans-serif;
         font-size: 0.8rem;
 
+        @include media(){
+            font-size: 0.6rem;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+
         a{
             text-decoration: none;
             color: black;
+            padding: 0 2px;
+            
         }
     }
 
+
 }
+
 
