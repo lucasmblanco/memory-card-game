@@ -5,8 +5,8 @@ import  _  from "lodash"
 function Panel({cardData, handleChange}) { 
     const shuffledAndSplice = () => {
         const cardsTable = _.shuffle(cardData);
-        const filterElement = () => cardsTable.findIndex(element => !element.checked);
-        const filtered = filterElement(); 
+        //const filterElement = () => cardsTable.findIndex(element => !element.checked);
+        const filtered = cardsTable.findIndex(element => !element.checked); 
         if(filtered > 15) {
            return _.shuffle(cardsTable.slice().reverse().slice(cardsTable.length - filtered, (cardsTable.length - filtered) + 5))
         }
