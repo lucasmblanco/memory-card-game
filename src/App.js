@@ -2,8 +2,9 @@ import Panel from "./components/panel";
 import ScoreDisplay from "./components/points";
 import Celebration from "./components/celebration"; 
 import End from "./components/end"
-import { useEffect, useState} from "react";
+import { useState} from "react";
 import { cardData } from "./components/cardsData";
+import  _  from "lodash"
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
      
 }
 
-
+//const cardsTable = _.shuffle(cardData);
 
   return(
       <div className="app">
@@ -45,7 +46,7 @@ function App() {
         <h2>MEMORY CARD GAME</h2>
         <ScoreDisplay status={points}/> 
         <div className="panel-container">
-          <Panel cardData={cards} handleChange={handleChange} />
+          <Panel cardData={_.shuffle(cards)} handleChange={handleChange} />
         </div>
       {
         points === 20 ? <Celebration resetGame={resetGame}/> : null
