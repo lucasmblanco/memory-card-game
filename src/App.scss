@@ -89,7 +89,8 @@ html, body{
             
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+
             width: 48rem;
             height: 5rem;
             margin: 10px;
@@ -97,13 +98,18 @@ html, body{
             background-color: white;
             border-radius: 20px;
             box-shadow: inset 0 0 0 13px black;
-            font-size: 3rem;
+            font-size: 2rem;
             font-family: "Hahmlet SemiBold", Arial, Helvetica, sans-serif;
             
+            h3{
+                padding: 10px;
+            }
+
            @include media(){
+                
                 width: 20rem;
                 height: 3rem;
-                font-size: 1.5rem;
+                font-size: 0.8rem;
                 margin: 10px;
                 padding: 10px;
                 box-shadow: inset 0 0 0 8px black;

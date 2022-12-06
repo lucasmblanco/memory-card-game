@@ -10,6 +10,7 @@ function App() {
 
   const [ points, setPoints ] = useState(0); 
   const [ cards, setCards] = useState(cardData);
+  const [highScore, setHighScore] = useState(0); 
 
   const changePoints = () => setPoints( prevPoints => prevPoints + 1);
   
@@ -29,6 +30,7 @@ function App() {
 
   const handleChange = (data) => {
     if(data.checked) {
+      setHighScore(points); 
       setPoints(0); 
       resetCards(); 
     } else {
@@ -44,7 +46,7 @@ function App() {
       <div className="app">
         <h1>FIND THE PEEPS</h1>
         <h2>MEMORY CARD GAME</h2>
-        <ScoreDisplay status={points}/> 
+        <ScoreDisplay status={points} highScore={highScore}/> 
         <div className="panel-container">
           <Panel cardData={_.shuffle(cards)} handleChange={handleChange} />
         </div>
